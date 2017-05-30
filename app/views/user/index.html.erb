@@ -1,0 +1,24 @@
+<h1> 最新消息 <h1>
+<ul>
+<% @new.each do |b| %>
+  <li>
+      <p>
+ 	   <%= b.title %>
+       <%= b.date %>
+      </p>
+  </li>
+<% end %>
+</ul>
+
+<h1> 網頁改版 <h1>
+<ul>
+<% @update.each do |b| %>
+  <li>
+      <p>
+ 	   <%= b.title %>
+       <%= b.date %>
+      </p>
+  </li>
+<% end %>
+</ul>
+
