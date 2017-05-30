@@ -3,8 +3,8 @@ class SecretController < ApplicationController
     before_action :verify
 
     def verify
-        @pw = "asdas"
-        if params[:user] != @pw
+        @hash = "asdas"
+        if params[:hash] != @hash
             redirect_to user_index_path
         end 
     end
@@ -24,7 +24,7 @@ class SecretController < ApplicationController
         @board = Board.new(board_params)
         @board.new = params[:new]
         @board.save
-        redirect_to secret_path(@board)
+        redirect_to secret_path(@board,:hash => "asdas")
     end
 
     def edit
@@ -32,12 +32,12 @@ class SecretController < ApplicationController
     def update
         @board.update(board_params)
         @board.save
-        redirect_to secret_path(@board)
+        redirect_to secret_path(@board,:hash => "asdas")
     end
 
     def destroy
         @board.destroy
-        redirect_to secret_index_path
+        redirect_to secret_index_path(:hash => "asdas")
     end
 
     private
