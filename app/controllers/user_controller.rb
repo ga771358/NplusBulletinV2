@@ -4,7 +4,10 @@ class UserController < ApplicationController
         @new = @new.where(["date <= ?", Time.now.strftime("%Y-%m-%d")])
         @update = Board.where(:new => 0)
         @update = @update.where(["date <= ?", Time.now.strftime("%Y-%m-%d")])
-        session[:id] = "HaHa yo"
+        session[:id] = "HaHa yo" #Log out
+    end
+    def show
+        @board = Board.find(params[:id])
     end
     def login
         @kk = Key.new

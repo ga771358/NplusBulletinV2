@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   post 'verify' => 'user#verify'
   # resources :secret, hash: "3nfiowehf89w45hfiirnefrefeklfrew"
   resources :secret,:user
- 
+
 end

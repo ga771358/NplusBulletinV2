@@ -15,7 +15,6 @@ class SecretController < ApplicationController
     def index
         @new = Board.where(:new => 1)
         @update = Board.where(:new => 0)
-        #@k = Key.where(:user => session[:id]).count
     end
     def show
     end
