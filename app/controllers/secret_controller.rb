@@ -3,8 +3,9 @@ class SecretController < ApplicationController
     before_action :verify
 
     def verify
-        @hash = "asdas"
-        if params[:hash] != @hash
+        if session[:id].to_s == "3wwfalrnferhfilernvldkscmkscewclmlkemc"
+            
+        else
             redirect_to user_index_path
         end 
     end
@@ -14,6 +15,7 @@ class SecretController < ApplicationController
     def index
         @new = Board.where(:new => 1)
         @update = Board.where(:new => 0)
+        #@k = Key.where(:user => session[:id]).count
     end
     def show
     end
@@ -24,7 +26,7 @@ class SecretController < ApplicationController
         @board = Board.new(board_params)
         @board.new = params[:new]
         @board.save
-        redirect_to secret_path(@board,:hash => "asdas")
+        redirect_to secret_path(@board)
     end
 
     def edit
@@ -32,12 +34,12 @@ class SecretController < ApplicationController
     def update
         @board.update(board_params)
         @board.save
-        redirect_to secret_path(@board,:hash => "asdas")
+        redirect_to secret_path(@board)
     end
 
     def destroy
         @board.destroy
-        redirect_to secret_index_path(:hash => "asdas")
+        redirect_to secret_index_path
     end
 
     private

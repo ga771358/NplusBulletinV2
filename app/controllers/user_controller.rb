@@ -4,6 +4,7 @@ class UserController < ApplicationController
         @new = @new.where(["date <= ?", Time.now.strftime("%Y-%m-%d")])
         @update = Board.where(:new => 0)
         @update = @update.where(["date <= ?", Time.now.strftime("%Y-%m-%d")])
+        session[:id] = "HaHa yo"
     end
     def login
         @kk = Key.new
@@ -13,7 +14,8 @@ class UserController < ApplicationController
         if @kk.count == 0
             redirect_to user_index_path
         else
-            redirect_to secret_index_path(:hash => "asdas")
+            session[:id] = "3wwfalrnferhfilernvldkscmkscewclmlkemc"
+            redirect_to secret_index_path
         end
     end
     
