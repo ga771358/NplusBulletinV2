@@ -1,5 +1,6 @@
 # README
-
+Video
+[![Watch demo video](https://img.youtube.com/vi/_TNfaksDt0k/0.jpg)](https://www.youtube.com/watch?v=_TNfaksDt0k&feature=youtu.be)
 * simple Bulletin with time scaduling and admin verification
 
 + Mainly two interface: user and admin 
